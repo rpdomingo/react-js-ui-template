@@ -27,7 +27,7 @@ const Layout: React.FC = () => {
         <Header onToggleSidebar={toggle} />
         
         {/* Main Content */}
-        <main className="flex-1 overflow-auto bg-white">
+        <main className="flex-1 overflow-auto bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
           <Outlet />
         </main>
       </div>

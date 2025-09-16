@@ -19,11 +19,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
   return (
     <>
       {/* Desktop Sidebar - takes up space in flex layout */}
-      <div className="hidden lg:flex lg:w-64 lg:flex-col bg-white border-r border-gray-200 h-full">
+  <div className="hidden lg:flex lg:w-64 lg:flex-col bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 h-full">
         {/* Header */}
-        <div className="border-b border-gray-200">
+  <div className="border-b border-gray-200 dark:border-gray-800">
           <div className="flex items-center justify-between px-4 py-4 pb-[1.1rem]">
-            <h2 className="text-xl font-bold text-gray-900">Navigation</h2>
+            {/* Dummy Logo SVG */}
+            <span className="flex items-center">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                <text x="16" y="21" textAnchor="middle" fontSize="16" fill="white" fontFamily="Arial" fontWeight="bold">L</text>
+              </svg>
+              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-100">Logo</span>
+            </span>
             <button
               onClick={onToggle}
               className="p-1 rounded-md hover:bg-gray-100 transition-colors"
@@ -56,15 +63,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                   // No onClick handler for desktop - sidebar stays open
                   className={`w-full flex items-center space-x-3 px-0 py-3 rounded-lg transition-colors duration-200 group text-left ${
                     location.pathname === link.path
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'hover:bg-gray-100 text-gray-700'
+                      ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
+                      : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200'
                   }`}
                 >
                   <span className="text-xl ml-0">{link.icon}</span>
                   <span className={`font-medium ${
                     location.pathname === link.path
-                      ? 'text-blue-700'
-                      : 'group-hover:text-gray-900'
+                      ? 'text-blue-700 dark:text-blue-300'
+                      : 'group-hover:text-gray-900 dark:group-hover:text-gray-100'
                   }`}>
                     {link.name}
                   </span>
@@ -75,16 +82,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
         </nav>
         
         {/* Footer - Fixed at bottom */}
-        <div className="border-t border-gray-200 p-4 mt-auto">
+        <div className="border-t border-gray-200 dark:border-gray-800 p-4 mt-auto">
           <div className="text-center">
-            <p className="text-xs text-gray-500">Version 1.0.0</p>
-            <p className="text-xs text-gray-400 mt-1">© 2025 MyApp</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Version 1.0.0</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">© 2025 MyApp</p>
           </div>
         </div>
       </div>
 
       {/* Mobile Sidebar Overlay */}
-      <div className={`lg:hidden fixed inset-0 z-50 ${isOpen ? '' : 'pointer-events-none'}`}>
+  <div className={`lg:hidden fixed inset-0 z-50 ${isOpen ? '' : 'pointer-events-none'}`}>
         {/* Backdrop */}
         <div 
           className={`fixed inset-0 bg-black transition-opacity ${
@@ -94,13 +101,20 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
         />
         
         {/* Sidebar Panel */}
-        <div className={`fixed left-0 top-0 h-full w-64 bg-white transform transition-transform flex flex-col ${
+        <div className={`fixed left-0 top-0 h-full w-64 bg-white dark:bg-gray-900 transform transition-transform flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
           {/* Header */}
-          <div className="border-b border-gray-200">
+          <div className="border-b border-gray-200 dark:border-gray-800">
             <div className="flex items-center justify-between px-4 py-4 pb-6">
-              <h2 className="text-xl font-bold text-gray-900">Navigation</h2>
+              {/* Dummy Logo SVG */}
+              <span className="flex items-center">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                  <text x="16" y="21" textAnchor="middle" fontSize="16" fill="white" fontFamily="Arial" fontWeight="bold">L</text>
+                </svg>
+                <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-100">Logo</span>
+              </span>
               <button
                 onClick={onToggle}
                 className="p-1 rounded-md hover:bg-gray-100 transition-colors"
@@ -133,15 +147,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                     onClick={handleMobileNavigation} // Close mobile sidebar when navigating
                     className={`w-full flex items-center space-x-3 px-0 py-3 rounded-lg transition-colors duration-200 group text-left ${
                       location.pathname === link.path
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'hover:bg-gray-100 text-gray-700'
+                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
+                        : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200'
                     }`}
                   >
                     <span className="text-xl ml-0">{link.icon}</span>
                     <span className={`font-medium ${
                       location.pathname === link.path
-                        ? 'text-blue-700'
-                        : 'group-hover:text-gray-900'
+                        ? 'text-blue-700 dark:text-blue-300'
+                        : 'group-hover:text-gray-900 dark:group-hover:text-gray-100'
                     }`}>
                       {link.name}
                     </span>
@@ -152,10 +166,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
           </nav>
           
           {/* Footer - Fixed at bottom */}
-          <div className="border-t border-gray-200 p-4 mt-auto">
+          <div className="border-t border-gray-200 dark:border-gray-800 p-4 mt-auto">
             <div className="text-center">
-              <p className="text-xs text-gray-500">Version 1.0.0</p>
-              <p className="text-xs text-gray-400 mt-1">© 2025 MyApp</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Version 1.0.0</p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">© 2025 MyApp</p>
             </div>
           </div>
         </div>

@@ -46,9 +46,9 @@ const HelpPage: React.FC = () => {
   ];
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-white dark:bg-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Help & Support</h1>
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">Help & Support</h1>
 
         {/* Search */}
         <div className="mb-8">
@@ -56,10 +56,10 @@ const HelpPage: React.FC = () => {
             <input
               type="text"
               placeholder="Search for help..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
             />
             <svg
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -76,53 +76,53 @@ const HelpPage: React.FC = () => {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
             <div className="text-4xl mb-3">📖</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">User Guide</h3>
-            <p className="text-gray-600 text-sm">Complete documentation and tutorials</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">User Guide</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Complete documentation and tutorials</p>
           </div>
-          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
             <div className="text-4xl mb-3">🎥</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Video Tutorials</h3>
-            <p className="text-gray-600 text-sm">Step-by-step video guides</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Video Tutorials</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Step-by-step video guides</p>
           </div>
-          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm text-center hover:shadow-md transition-shadow cursor-pointer">
             <div className="text-4xl mb-3">💡</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Tips & Tricks</h3>
-            <p className="text-gray-600 text-sm">Make the most of your experience</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Tips & Tricks</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Make the most of your experience</p>
           </div>
         </div>
 
         {/* FAQ */}
-        <div className="bg-white rounded-lg border border-gray-200 shadow-sm mb-8">
-          <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm mb-8">
+          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Frequently Asked Questions</h2>
           </div>
-          <div className="divide-y divide-gray-200">
+          <div className="divide-y divide-gray-200 dark:divide-gray-700">
             {faqItems.map((item, index) => (
               <div key={index} className="p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-3">{item.question}</h3>
-                <p className="text-gray-600">{item.answer}</p>
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">{item.question}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{item.answer}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Contact Support */}
-        <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-          <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Contact Support</h2>
-            <p className="text-gray-600 mt-1">Can't find what you're looking for? Get in touch with our support team.</p>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
+          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Contact Support</h2>
+            <p className="text-gray-600 dark:text-gray-400 mt-1">Can't find what you're looking for? Get in touch with our support team.</p>
           </div>
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {contactOptions.map((option, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl mb-3">{option.icon}</div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">{option.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{option.description}</p>
-                  <p className="text-black font-medium">{option.contact}</p>
-                  <button className="mt-3 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">{option.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{option.description}</p>
+                  <p className="text-black dark:text-gray-100 font-medium">{option.contact}</p>
+                  <button className="mt-3 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 transition-colors text-sm">
                     Contact
                   </button>
                 </div>
@@ -132,7 +132,7 @@ const HelpPage: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center text-gray-500">
+        <div className="mt-8 text-center text-gray-500 dark:text-gray-400">
           <p>Need immediate assistance? Our support team is here to help!</p>
         </div>
       </div>

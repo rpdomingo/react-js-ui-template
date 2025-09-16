@@ -51,51 +51,46 @@ const ProjectsPage: React.FC = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-white dark:bg-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-900">Projects</h1>
-          <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Projects</h1>
+          <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 transition-colors">
             + New Project
           </button>
         </div>
 
         <div className="grid gap-6">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <div key={project.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.name}</h3>
-                  <p className="text-gray-600 mb-3">{project.description}</p>
-                  
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{project.name}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-3">{project.description}</p>
                   <div className="flex items-center space-x-4 mb-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(project.status)}`}>
-                      {project.status}
-                    </span>
-                    <span className="text-sm text-gray-500">Due: {project.dueDate}</span>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(project.status)}`}>{project.status}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">Due: {project.dueDate}</span>
                   </div>
-
                   <div className="flex items-center space-x-4">
                     <div className="flex-1">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm text-gray-600">Progress</span>
-                        <span className="text-sm text-gray-600">{project.progress}%</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-300">Progress</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-300">{project.progress}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div
-                          className="bg-black h-2 rounded-full transition-all duration-300"
+                          className="bg-black dark:bg-blue-500 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${project.progress}%` }}
                         />
                       </div>
                     </div>
-                    
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm text-gray-600">Team:</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-300">Team:</span>
                       <div className="flex -space-x-2">
                         {project.team.map((member, index) => (
                           <div
                             key={index}
-                            className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-bold text-gray-700 border-2 border-white"
+                            className="w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center text-xs font-bold text-gray-700 dark:text-gray-100 border-2 border-white dark:border-gray-900"
                             title={member}
                           >
                             {member[0]}

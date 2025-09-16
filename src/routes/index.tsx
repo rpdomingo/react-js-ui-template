@@ -13,6 +13,7 @@ const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 const HelpPage = lazy(() => import('../pages/HelpPage'));
 const ProfilePage = lazy(() => import('../pages/ProfilePage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const DataTablePage = lazy(() => import('../pages/DataTablePage'));
 
 // Wrapper component for lazy-loaded pages with error boundary
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -91,6 +92,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'datatable',
+        element: (
+          <PageWrapper>
+            <DataTablePage />
+          </PageWrapper>
+        ),
+      },
+      {
         path: '*',
         element: (
           <PageWrapper>
@@ -108,6 +117,7 @@ export const navigationRoutes = [
   { name: 'Projects', path: '/projects', icon: '📁' },
   { name: 'Team', path: '/team', icon: '👥' },
   { name: 'Analytics', path: '/analytics', icon: '📈' },
+  { name: 'Data Table', path: '/datatable', icon: '📋' },
   { name: 'Settings', path: '/settings', icon: '⚙️' },
   { name: 'Help', path: '/help', icon: '❓' },
   { name: 'Profile', path: '/profile', icon: '👤' },
