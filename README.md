@@ -1,4 +1,4 @@
-# React Navigation App
+# React JS UI Template
 
 A modern React.js application with a clean white and black design featuring a collapsible left navigation sidebar built with TypeScript and Tailwind CSS.
 
