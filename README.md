@@ -5,10 +5,13 @@ A modern React.js application with a clean white and black design featuring a co
 ## Features
 
 - 🎨 **Clean Design**: Minimalist white and black color scheme
-- 📱 **Responsive**: Mobile-first design that works on all devices
+- 🌗 **Dark/Light Mode**: Toggle between dark and light themes across all pages and components
+- 📱 **Responsive & Mobile Friendly**: Mobile-first design with horizontal scrollable navigation tabs for full accessibility
 - 🔀 **Collapsible Navigation**: Hide/show sidebar functionality
-- ⚡ **Modern Stack**: React 18, TypeScript, Tailwind CSS
-- 🎯 **Best Practices**: Component-based architecture, custom hooks, accessibility features
+- ⚡ **Modern Stack**: React 18, TypeScript, Tailwind CSS, CoreUI
+- 🗂️ **Data Table Page**: Advanced data table with search, pagination, page size selector, and action icons
+- 🧩 **CoreUI Integration**: Ready for CoreUI React components
+- 🎯 **Best Practices**: Component-based architecture, custom hooks, accessibility features, and clean code
 - 🔍 **Interactive Elements**: Search functionality, notifications, user profile
 - 📊 **Dashboard**: Sample dashboard with stats, projects, and quick actions
 
@@ -20,7 +23,8 @@ The sidebar includes the following sample navigation links:
 - 📁 Projects
 - 👥 Team
 - 📈 Analytics
-- ⚙️ Settings
+- 🗂️ Data Table
+- ⚙️ Settings (with tabs: General, Profile, Notifications, Security, Integrations)
 - ❓ Help
 - 👤 Profile
 
@@ -57,13 +61,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 src/
 ├── components/
-│   ├── Header.tsx          # Top navigation bar
-│   ├── Sidebar.tsx         # Left navigation sidebar
+│   ├── Header.tsx          # Top navigation bar (with dark mode toggle)
+│   ├── Sidebar.tsx         # Left navigation sidebar (logo, links)
 │   ├── MainContent.tsx     # Main content area
 │   └── index.ts           # Component exports
 ├── hooks/
 │   └── useSidebar.ts      # Custom hook for sidebar state
-├── App.tsx                # Main application component
+├── pages/
+│   ├── DashboardPage.tsx  # Dashboard
+│   ├── ProjectsPage.tsx   # Projects
+│   ├── TeamPage.tsx       # Team
+│   ├── AnalyticsPage.tsx  # Analytics
+│   ├── DataTablePage.tsx  # Data Table (search, pagination, actions)
+│   ├── SettingsPage.tsx   # Settings (multi-tab, dark mode)
+│   ├── HelpPage.tsx       # Help & Support
+│   ├── ProfilePage.tsx    # User Profile
+│   └── NotFoundPage.tsx   # 404
+├── routes/
+│   └── index.tsx          # App routes and navigation
+├── App.tsx                # Main application component (theme context)
 ├── index.tsx              # Application entry point
 └── index.css              # Global styles with Tailwind
 ```
@@ -72,7 +88,8 @@ src/
 
 - **React 18** - UI library
 - **TypeScript** - Type safety and better development experience
-- **Tailwind CSS** - Utility-first CSS framework
+- **Tailwind CSS** - Utility-first CSS framework (with dark mode)
+- **CoreUI React** - UI component library (installed, ready for use)
 - **React Icons** - Beautiful icons
 - **Create React App** - Development environment
 
