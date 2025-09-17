@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
                 <rect width="32" height="32" rx="8" fill="#2563EB"/>
                 <text x="16" y="21" textAnchor="middle" fontSize="16" fill="white" fontFamily="Arial" fontWeight="bold">L</text>
               </svg>
-              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-100">Logo</span>
+              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-100">OMS</span>
             </span>
             <button
               onClick={onToggle}
